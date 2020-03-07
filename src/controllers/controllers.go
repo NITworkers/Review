@@ -89,8 +89,9 @@ func Signup(ctx *gin.Context) {
 
 	//重複Nameの確認用ロジック
 	if db.Where("Name = ?", queryName).RecordNotFound() {
-		userAcount{
-			{Name: queryName, Password: queryPassword},
+		userAccount = models.UserAccount{
+			Name:     queryName,
+			Password: queryPassword,
 		}
 		db.Create(&userAccount)
 
