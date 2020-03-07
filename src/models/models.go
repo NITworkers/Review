@@ -3,10 +3,14 @@ package models
 
 //依存パッケージ（外部）のインポート
 import (
-	"fmt"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	_ "time"
+)
+
+//依存パッケージ（自作）のインポート
+import (
+	"applog"
 )
 
 //構造体（ユーザアカウント）
@@ -14,6 +18,7 @@ type UserAccount struct {
 	gorm.Model
 	Name     string
 	Password string
+	Session  string
 }
 
 //構造体（評価）
@@ -46,15 +51,14 @@ const (
 var dbConnection *gorm.DB
 
 func Initialize() {
-	fmt.Println(dbConnection)
 	tmpDbConnection, err := gorm.Open(dbms, dbUser+":"+dbPassword+"@"+dbProtocol+"/"+dbName+"?parseTime=true")
 
 	if err != nil {
-		fmt.Println("models.go init error : データベース開けず！")
+		applog.Logger.Print("models.go init error : データベース開けず！")
 		panic(err)
 	}
 	dbConnection = tmpDbConnection
-	fmt.Println("database connected")
+	applog.Logger.Print("データベース接続OK！")
 
 	dbConnection.AutoMigrate(&UserAccount{})
 	dbConnection.AutoMigrate(&Evaluation{})
