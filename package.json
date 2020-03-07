@@ -1,0 +1,29 @@
+{
+  "name": "GourmetReview",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react-dom": "npm:@hot-loader/react-dom@^16.12.0",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --hot --inline --public ${C9_PID}.vfs.cloud9.us-east-2.amazonaws.com"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.8.3",
+    "css-loader": "^3.4.2",
+    "preset-react": "^1.0.0",
+    "react": "^16.13.0",
+    "style-loader": "^1.1.3"
+  }
+}

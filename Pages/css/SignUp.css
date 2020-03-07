@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Container {
+    background-image: url("../../src/img/BBQ.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.header {
+    height: 100px;
+    min-width: 100vh;
+}
+
+.Rgba {
+    min-height: 100vh;
+    background: rgba(255,255,255,0.8);
+}
+
+.Title {
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #544747;
+    float: left;
+}
+
+.Menu {
+    padding-top: 10px;
+    padding-right: 10px;
+    float: right;
+    height: 30px;
+    width: 120px;
+}
+
+.SignupForm {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    height: 450px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+}
+
+.SignupForm p {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.form-liner {
+    height: 60px;
+    width: 100%;
+}
+
+.form-liner ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.form-liner ul li{
+  list-style-type: none;
+  text-align: right;
+  display: inline-block;
+}
+
+.form-left {
+    width: 45%;
+    min-width: 80px;
+    max-width: 175px;
+    float: left;
+}
+
+.form-left li {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.form-right {
+    width:55%;
+    max-width: 200px;
+    padding-left: 15px;
+    float: left;
+}
+
+.form-right small {
+    color: red;
+    font-weight: bold;
+    float: left;
+    padding-left: 30px;
+}
+
+.signupbtn {
+    display: table;
+    position: relative;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    margin:0 auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+    cursor: pointer;
+}
+
+.signupbtn ::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: #333;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+}
+
+.signupbtn :hover::after {
+    transform: scale(1, 1);
+}
+
+.signupbtn :active {
+    background-color: #dcdcdc;
+}
+
+.btncentering {
+    display: table-cell;
+    vertical-align: middle;
+}
