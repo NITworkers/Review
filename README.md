@@ -17,12 +17,22 @@ yarnコマンド（webpackでのビルド）準備済み
 - ビルドの設定ファイルはwebpack.config.js
 
 
+### データベース初期化 / テストデータの準備方法
+
+1. データベースの初期化
+  - ターミナル（シェル）で`sudo mysql < src/models/misc/db_init.sql` を実行
+
+2. テストデータの準備
+  - src/models/misc/testdata_init.goを実行
+
+
 
 ### TODO
 - git登録　⇒　過去にgithub上にレポジトリ作成しているが
   cloud9上のワークスペースがgit管理されなくなっている
   （.gitディレクトリを誰か削除した？）
 - →犯人はNITworker1
+- →とりあえずgitレポジトリにしました。GitHub(remote登録)は未実施
 
 - ページ遷移を要整理。HTMLとGO側で整合性が必要。各ページも内容適当
 
@@ -31,7 +41,6 @@ yarnコマンド（webpackでのビルド）準備済み
 
 - DB設定を要整理。
     - パスワードがプレーンで保存されている
-    - テスト時のデータ準備をどうにか自動化したい
 
 
 
