@@ -31,13 +31,13 @@ yarnコマンド（webpackでのビルド）準備済み
 - git登録　⇒　過去にgithub上にレポジトリ作成しているが
   cloud9上のワークスペースがgit管理されなくなっている
   （.gitディレクトリを誰か削除した？）
-- →犯人はNITworker1
-- →とりあえずgitレポジトリにしました。GitHub(remote登録)は未実施
+  - →犯人はNITworker1
+  - →とりあえずgitレポジトリにしました。GitHub(remote登録)は未実施
 
 - ページ遷移を要整理。HTMLとGO側で整合性が必要。各ページも内容適当
 
 - react対応。HTMLべた書きから、reactでのコンテンツ作成・モジュール化に移行したい
-- →NITworker1がやるよ
+  - →NITworker1がやるよ
 
 - DB設定を要整理。
     - パスワードがプレーンで保存されている
