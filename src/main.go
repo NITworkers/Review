@@ -21,6 +21,9 @@ func main() {
 	models.Initialize()
 	defer models.Finalize()
 
+	//静的コンテンツの配信
+	router.Static("/static", "/home/ubuntu/environment/GourmetReview/Pages/js/build")
+
 	//トップ・ログイン画面
 	router.GET("/", controllers.Top)
 
@@ -32,6 +35,9 @@ func main() {
 
 	//サインアップ
 	router.GET("/SignUp", controllers.Signup)
+
+	//レビューから探す
+	router.GET("/SearchReviews", controllers.SearchReviews)
 
 	//稼働
 	router.Run()

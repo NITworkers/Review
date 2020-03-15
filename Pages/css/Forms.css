@@ -1,0 +1,36 @@
+.FormLiner {
+    height: 60px;
+    width: 100%;
+}
+
+.FormLiner li{
+  list-style-type: none;
+  text-align: right;
+  display: inline-block;
+}
+
+.FormLeft {
+    width: 40%;
+    min-width: 80px;
+    max-width: 150px;
+    float: left;
+}
+
+.FormLeft li {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.FormRight {
+    width:55%;
+    max-width: 150px;
+    padding-left: 15px;
+    float: left;
+}
+
+.FormRight small {
+    color: red;
+    font-weight: bold;
+    float: left;
+    padding-left: 30px;
+}

@@ -33,4 +33,26 @@ func main() {
 		Name:     "User3",
 		Password: "User3",
 	})
+
+	//テストデータ作成
+	db.Create(&models.Review{
+		SubmitUserId: 1,
+		StoreName:    "Google",
+		StoreURL:     "http://wwww.google.co.jp",
+		Text:         "useful to search",
+	})
+
+	db.Create(&models.Review{
+		SubmitUserId: 2,
+		StoreName:    "yahoo",
+		StoreURL:     "http://wwww.yahoo.co.jp",
+		Text:         "やふー",
+	})
+	db.Create(&models.Review{
+		SubmitUserId: 3,
+		StoreName:    "おのだ",
+		StoreURL:     "",
+		Text:         "ONO-da",
+	})
+
 }

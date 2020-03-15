@@ -24,7 +24,7 @@ yarnコマンド（webpackでのビルド）準備済み
 
 2. テストデータの準備
   - src/models/misc/testdata_init.goを実行
-
+  - 初期化せず、データ追加する際にはsrc/models/misc/testdata_add.goで対応します
 
 
 ### TODO

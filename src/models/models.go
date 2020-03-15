@@ -24,18 +24,20 @@ type UserAccount struct {
 //構造体（評価）
 type Evaluation struct {
 	gorm.Model
-	reviewId       int
-	evaluateUserId int
+	Review         Review `gorm:"foreignkey:ReviewId"` //ReviewIdを外部キーとして使用する
+	ReviewId       int
+	User           UserAccount `gorm:"foreignkey:EvaluateUserId"` //EvaluateUserId を外部キーとして使用する
+	EvaluateUserId int
 }
 
 //構造体（レビュー情報）
 type Review struct {
 	gorm.Model
-	submitUserId int
-	storeName    string
-	storeURL     string
-	text         string
-	evaluations  []Evaluation
+	SubmitUser   UserAccount `gorm:"foreignkey:SubmitUserId"` // UserId を外部キーとして使用する
+	SubmitUserId int
+	StoreName    string
+	StoreURL     string
+	Text         string
 }
 
 //DB接続情報の定義

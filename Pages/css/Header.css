@@ -1,0 +1,111 @@
+.Header-wrapper {
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 1;
+    z-index: 20;
+}
+
+.Header-logo {
+    margin-top: 3px;
+    padding-left: 10px;
+    width: 200px;
+    font-size: 24px;
+    padding-bottom: 5px;
+    color: #fff;
+    font-weight: bold;
+    opacity: 1;
+    float: left;
+}
+
+#menuOn{
+  display : none
+}
+
+menu{
+  margin      : 8px;
+  position    : relative;
+  float       : right;
+  font-size   : 20px;
+  line-height : 20px;
+  height      : 25px;
+  width       : 100px;
+  background-image: url(../img/Menu.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.5s
+}
+
+menu:hover {
+  transform   :scale(1.1, 1.1);
+}
+
+/* メニュー */
+#menuOn:checked + menu{
+  background-image: url(../img/MenuOpen.png);
+  max-width       : 960px;
+  z-index         : 20;
+  transform   :scale(1.1, 1.1);
+  transition      :0.5s;
+}
+
+#menuOn:checked + menu:hover {
+  transition      :0.5s;
+  background-image: url(../img/MenuClose.png);
+}
+
+#menuOn:checked + menu a {
+  transition  :0.5s;
+  font-size   : 20px;
+}
+
+#menuOn:checked + menu a:hover {
+  transition  :0.5s;
+  font-size   :22px;
+}
+
+
+#menuOn:checked + menu + div.overlay{
+  position : fixed;
+  top      :  0;
+  bottom   :  0;
+  left     :  0;
+  right    :  0;
+  z-index  : 10;
+  background : rgba(0,0,0,0);
+}
+
+#menuOn:checked + menu ul{
+  display: block;
+}
+
+ul{
+  position: absolute;
+  background : rgba(84,71,71,0.95);
+  padding: 0;
+  top    : 40px;
+  right  : 50px;
+  display: none;
+}
+
+li{
+  list-style-type : none;
+  /* メニュー要素の背景色と合わせる*/
+  width           : 250px;
+  text-align      : left;
+  white-space     : nowrap;
+  text-overflow   : ellipsis;
+}
+
+.liSpace {
+  margin-top: 40px
+}
+
+li a{
+  display       : block;
+  padding       :  10px;
+  color: white;
+}

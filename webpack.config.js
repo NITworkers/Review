@@ -8,7 +8,7 @@ module.exports = {
     // アプリケーションが実行を開始されるポイント(エントリーポイント)
     // 配列で指定すると、すべての項目が実行される
     // https://webpack.js.org/configuration/entry-context/#entry
-    entry: './Pages/js/handmade/app.js',
+    entry: './Pages/js/handmade/app.jsx',
     output: {
         filename: 'bundle.js',
         // ビルド後のファイルが出力される"絶対パス"ディレクトリ
@@ -18,7 +18,7 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.(js|jsx)/,
           exclude: /node_modules/,
           loader: 'babel-loader',
           options: {
@@ -35,10 +35,14 @@ module.exports = {
             ]
           }
         },
-        { test: /\.css$/, loader: "style!css" },
-        { test: /\.(png|jpg|jpeg|gif|woff)$/, loader: 'url?limit=8192' },
+        { test: /\.css$/, loader: "style-loader!css-loader" },
+        { test: /\.(png|jpg|jpeg|gif|woff)$/, loader: "url-loader" },
         { test: /\.(otf|eot|ttf)$/, loader: "file?prefix=font/" },
         { test: /\.svg$/, loader: "file" }
       ]
-    }
+    },
+    devServer: {
+      contentBase: path.join(__dirname, 'Pages'),
+      hot: true
+    },
 };

@@ -1,116 +1,57 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .Container {
-    background-image: url("../../src/img/BBQ.jpg");
+    margin: 0;
+    background-image: url("../img/BBQ.jpg");
     background-size: cover;
     min-height: 100vh;
+    width: 100%;
     background-attachment: fixed;
 }
 
-.header {
-    height: 100px;
-    min-width: 100vh;
-}
-
-.Rgba {
+.BgOpacity {
     min-height: 100vh;
     background: rgba(255,255,255,0.8);
 }
 
-.Title {
-    padding-top: 10px;
-    padding-left: 10px;
-    font-size: 25px;
-    font-weight: bold;
-    color: #544747;
-    float: left;
+.Space {
+    height: 100px;
+    min-width: 100%
 }
 
-.Menu {
-    padding-top: 10px;
-    padding-right: 10px;
-    float: right;
-    height: 30px;
-    width: 120px;
-}
-
-.SignupForm {
+.SigninForm {
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 60px;
     text-align: center;
     width: 80%;
     max-width: 400px;
-    height: 300px;
+    height: 320px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px #ccc;
 }
 
-.SignupForm p {
+.SigninForm p {
     padding-top: 20px;
     padding-bottom: 40px;
     font-size: 30px;
     font-weight: bold;
 }
 
-.form-liner {
-    height: 60px;
-    width: 100%;
-}
-
-.form-liner ul {
-  list-style-type: none;
-  text-align: center;
-}
-
-.form-liner ul li{
-  list-style-type: none;
-  text-align: right;
-  display: inline-block;
-}
-
-.form-left {
-    width: 40%;
-    min-width: 80px;
-    max-width: 150px;
-    float: left;
-}
-
-.form-left li {
-    font-size: 20px;
-    font-weight: normal;
-}
-
-.form-right {
-    width:55%;
-    max-width: 150px;
-    padding-left: 15px;
-    float: left;
-}
-
-.form-right small {
-    color: red;
-    font-weight: bold;
-    float: left;
-    padding-left: 30px;
-}
-
-.signupbtn {
+.SignInBtn {
     display: table;
     position: relative;
     width: 100px;
     height: 40px;
     font-weight: bold;
     margin:0 auto;
-    border-radius: 5px;
+    border-width: 2px;
+    border-radius: 8px;
     box-shadow: 0 2px 5px #ccc;
     cursor: pointer;
 }
 
-.signupbtn ::after {
+.SignInBtn ::after {
     position: absolute;
     bottom: 0px;
     left: 0;
@@ -123,15 +64,15 @@
     transition: transform .3s;
 }
 
-.signupbtn :hover::after {
+.SignInBtn :hover::after {
     transform: scale(1, 1);
 }
 
-.signupbtn :active {
+.SignInBtn:active {
     background-color: #dcdcdc;
 }
 
-.btncentering {
+.BtnCentering {
     display: table-cell;
     vertical-align: middle;
 }

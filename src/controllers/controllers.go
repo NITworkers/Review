@@ -28,11 +28,11 @@ func Signin(ctx *gin.Context) {
 	var userAccount models.UserAccount
 
 	//	g.Request.ParseForm()　⇒　不要では？
-	var queryName, isNotEmpty1 = ctx.GetQuery("name")
-	var queryPassword, isNotEmpty2 = ctx.GetQuery("pass")
+	var queryName, isNotEmpty1 = ctx.GetQuery("_userName")
+	var queryPassword, isNotEmpty2 = ctx.GetQuery("_userPass")
 
-	applog.Logger.Print("name:", queryName)
-	applog.Logger.Print("pass:", queryPassword)
+	applog.Logger.Print("userName:", queryName)
+	applog.Logger.Print("userPass:", queryPassword)
 
 	//空データ確認ロジック
 	if !isNotEmpty1 || !(len(queryName) > 0) {
@@ -112,6 +112,27 @@ error:
 	return
 }
 
-func GetReviews(ctx *gin.Context) {
+func SearchReviews(ctx *gin.Context) {
 	//作成中
+	//「レビューから探す」で画面遷移時に実行
+	//　　話題のレビューと新着レビューを3件ずつ取得
+	var db = models.GetDbConnection()
+	//var hotReviews [3]models.Review
+	var newReviews []models.Review
+	var Reviews []models.Review
+
+	//話題のレビュー取得（何をもって話題とするか考える）
+
+	//新着レビュー取得（作成日時が最新の３件）
+	db.Order("created_at desc").Limit(3).Find(&Reviews)
+	newReviews = Reviews
+
+	applog.Logger.Print(len(newReviews))
+	applog.Logger.Print(newReviews[0].StoreName)
+	applog.Logger.Print(newReviews[1].StoreName)
+	applog.Logger.Print(newReviews[2].StoreName)
+	applog.Logger.Print(newReviews[0].CreatedAt)
+	applog.Logger.Print(newReviews[1].CreatedAt)
+	applog.Logger.Print(newReviews[2].CreatedAt)
+	ctx.HTML(200, "SearchReviews.html", gin.H{})
 }
