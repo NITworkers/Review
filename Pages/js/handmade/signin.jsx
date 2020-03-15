@@ -5,7 +5,7 @@ import RenderForm from './forms.jsx'
 export default class SignIn extends React.Component{
     formSubmit(eid) {
         const target = document.getElementById(eid);
-        target.method = 'Get';
+        target.method = 'get';
         target.submit();
     }
 
