@@ -33,11 +33,16 @@ yarnコマンド（webpackでのビルド）準備済み
   （.gitディレクトリを誰か削除した？）
   - →犯人はNITworker1
   - →とりあえずgitレポジトリにしました。GitHub(remote登録)は未実施
+  - →(3/15更新)GitHub登録しました。https://github.com/NITworkers/Review
 
 - ページ遷移を要整理。HTMLとGO側で整合性が必要。各ページも内容適当
 
 - react対応。HTMLべた書きから、reactでのコンテンツ作成・モジュール化に移行したい
   - →NITworker1がやるよ
+  - →(3/15更新)ログインフォームをreactで作りました。フォームのname属性変えたので、
+  -  controller側もそこだけ変更してます。
+  -  他画面も随時作成していくので、webpackのentryを複数にしました。
+  -  それに伴って、[name].bundle.jsの形でbuildに出力するよう変更しています。
 
 - DB設定を要整理。
     - パスワードがプレーンで保存されている
