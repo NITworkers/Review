@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './header.jsx';
-import SignIn from './signin.jsx';
+import Header from '../component/header.jsx';
+import SignIn from '../component/signin.jsx';
 
-class App extends React.Component{
+class R_SignIn extends React.Component{
     render(){
         return(
             <div>
@@ -18,4 +18,4 @@ class App extends React.Component{
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<R_SignIn />, document.getElementById('r_signin'));
