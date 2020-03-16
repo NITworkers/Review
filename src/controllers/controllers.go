@@ -23,6 +23,14 @@ func Kiyopon(ctx *gin.Context) {
 	ctx.HTML(200, "kiyopon.html", gin.H{})
 }
 
+func SignupView(ctx *gin.Context) {
+	ctx.HTML(200, "signup.html", gin.H{})
+}
+
+func SigninView(ctx *gin.Context) {
+	ctx.HTML(200, "signin.html", gin.H{})
+}
+
 func Signin(ctx *gin.Context) {
 	var db = models.GetDbConnection()
 	var userAccount models.UserAccount

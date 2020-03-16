@@ -33,8 +33,14 @@ func main() {
 	//サインイン処理
 	router.GET("/SignIn", controllers.Signin)
 
-	//サインアップ
+	//サインアップ処理
 	router.GET("/SignUp", controllers.Signup)
+
+	//サインイン画面
+	router.GET("/SignInView", controllers.SigninView)
+
+	//サインアップ画面
+	router.GET("/SignUpView", controllers.SignupView)
 
 	//レビューから探す
 	router.GET("/SearchReviews", controllers.SearchReviews)
