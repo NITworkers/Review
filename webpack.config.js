@@ -8,9 +8,12 @@ module.exports = {
     // アプリケーションが実行を開始されるポイント(エントリーポイント)
     // 配列で指定すると、すべての項目が実行される
     // https://webpack.js.org/configuration/entry-context/#entry
-    entry: './Pages/js/handmade/app.jsx',
+    entry: {
+      signin: './Pages/js/render/R_signin.jsx',
+      signup: './Pages/js/render/R_signup.jsx'
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         // ビルド後のファイルが出力される"絶対パス"ディレクトリ
         // https://webpack.js.org/configuration/output/#outputpath
         path: path.join(__dirname, 'Pages/js/build')
