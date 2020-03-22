@@ -9,6 +9,7 @@ module.exports = {
     // 配列で指定すると、すべての項目が実行される
     // https://webpack.js.org/configuration/entry-context/#entry
     entry: {
+      top   : './Pages/js/render/R_top.jsx',
       signin: './Pages/js/render/R_signin.jsx',
       signup: './Pages/js/render/R_signup.jsx'
     },
