@@ -5,7 +5,9 @@ export default class Header extends React.Component{
     render() {
         return(
             <div className="Header-wrapper">
-                <div className="Header-logo">レビューサイト</div>
+                <div className="Header-logo">
+                <a href="/">レビューサイト</a>
+                </div>
                 <label htmlFor="menuOn">
                     <input
                         id="menuOn"

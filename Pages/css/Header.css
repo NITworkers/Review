@@ -21,6 +21,11 @@
     float: left;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 #menuOn{
   display : none
 }

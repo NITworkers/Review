@@ -32,7 +32,7 @@ export default class SignUp extends React.Component{
 
     formSubmit(eid) {
         const target = document.getElementById(eid);
-        if (this.state.loading === true) {
+        if (this.state.isActive === true) {
             target.method = 'get';
             target.submit();
         }
@@ -74,10 +74,9 @@ export default class SignUp extends React.Component{
                                     formVal={(val) => this.passValidation('checkpass', val)}
                                     message={this.state.message}
                                 />
-                                <div className={[
-                                    'post',
+                                <div className={
                                     this.state.isActive ? 'SignUpBtn' : 'CantSignUp'
-                                    ].join(' ')}
+                                    }
                                     onClick={() => this.formSubmit('checkForm')}>
                                     <div className="BtnCentering">登録する</div>
                                 </div>

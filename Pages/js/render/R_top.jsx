@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from '../component/header.jsx';
-import SignUp from '../component/signup.jsx';
+import Top from '../component/top.jsx';
 
-class R_SignUp extends React.Component{
+class R_Top extends React.Component{
     render(){
         return(
             <div>
@@ -11,13 +11,11 @@ class R_SignUp extends React.Component{
                     <Header />
                 </div>
                 <div>
-                    <SignUp />
-                    kiuopon
-
+                    <Top />
                 </div>
             </div>
         );
     }
 }
 
-ReactDOM.render(<R_SignUp />, document.getElementById('r_signup'));
+ReactDOM.render(<R_Top />, document.getElementById('r_top'));
