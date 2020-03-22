@@ -144,3 +144,174 @@ func SearchReviews(ctx *gin.Context) {
 	applog.Logger.Print(newReviews[2].CreatedAt)
 	ctx.HTML(200, "SearchReviews.html", gin.H{})
 }
+
+/*
+func SubmitReview(ctx *gin.Context) {
+	/*
+	 * PEND事項いくつかあり
+	 * １．ユーザーID取得方法
+	 * ２．WEB側ページ構成（投稿成功時、失敗時）
+
+	var db = models.GetDbConnection()
+	var Review models.Review
+	/* ユーザーIDの取得方法がPEND
+	 * ・View側から連携あり？
+	 * ・ゲストは投稿できないとして、どこで制限かけるか（WEB側？）
+	 * ※いったんページ側で制限かけて、UserId=NULLで入ってこない想定で作成
+	var querySubmitUserId = ctx.GetQuery("userId")
+	var queryStoreName, isNotEmpty1 = ctx.GetQuery("storename")
+	var queryStoreURL = ctx.GetQuery("storeurl")
+	var queryText = ctx.GetQuery("text")
+
+	applog.Logger.Print("SubmitUserId:", querySubmitUserId)
+	applog.Logger.Print("StoreName:", queryStoreName)
+	applog.Logger.Print("StoreURL:", queryStoreURL)
+	applog.Logger.Print("Text:", queryText)
+
+	//空データ確認ロジック
+	if !isNotEmpty1 || !(len(queryStoreName) > 0) {
+		applog.Logger.Print("店名が入力なし") //テスト用
+		goto error
+	}
+
+	Review = models.Review{
+		SubmitUserId: querySubmitUserId,
+		StoreName:    queryStoreName,
+		StoreURL:     queryStoreURL,
+		Text:         queryText,
+	}
+	db.Create(&Review)
+
+	applog.Logger.Print("登録成功")
+	goto success
+
+success:
+	ctx.HTML(200, "submited.html", gin.H{}) //ファイル名は仮
+	return
+
+error:
+	ctx.HTML(200, "error.html", gin.H{}) //ファイル名は仮（このままでもよいか？）
+	return
+
+}
+*/
+/*
+func EditReview(ctx *gin.Context) {
+	//
+	// 作成中（勝手に作ってくれてもいいよ）
+	// すでに投稿されたレビューについて修正を行う
+
+
+	//DBから対象のレビューを取得（必要情報はView側から連携あり想定）
+
+	//対象の投稿についてアップデートをかける
+}
+*/
+/*
+func DeleteReview(ctx *gin.Context) {
+	//
+	 * 作成中（勝手に作ってくれてもいいよ）
+	 * すでに投稿されたレビューについて削除を行う
+	 *
+	//
+
+	//DBから対象のレビューを取得（必要情報はView側から連携あり想定）
+
+	//対象の投稿についてデリートをかける
+}
+
+*/
+/*
+func EvaluateUp(ctx *gin.Context) {
+	/*
+	 * 作成中（勝手に作ってくれてもいいよ）
+	 * 投稿に対し、評価を実施
+
+	var db = models.GetDbConnection()
+	var Evaluation models.Evaluation
+
+	//評価対象のビュー、評価者の情報を設定（必要情報はView側から連携あり想定）
+	/* ユーザーIDの取得方法がPEND
+	 * ・View側から連携あり？
+	 * ・ゲストの場合にどのような値が入ってくる？
+	var queryReviewId, isNotNull = ctx.GetQuery("reviewId")
+	var queryEvaluateUserId = ctx.GetQuery("evaluateuserid")
+
+	applog.Logger.Print("ReviewId:", queryReviewId)
+	applog.Logger.Print("EvaluateUserId:", queryEvaluateUserId)
+
+	//空データ確認ロジック
+	if !isNotNull || !queryReviewId == NULL {
+		applog.Logger.Print("評価対象のレビュー情報なし") //テスト用
+		goto error
+	}
+
+	/*PENDあり
+	 * 評価者がゲストユーザーか、登録ユーザーかで分岐が必要
+	 * ※現在は登録ユーザーのみを想定したロジック
+
+	Evaluation = models.Evaluation{
+		ReviewId:       queryReviewId,
+		EvaluateUserId: queryEvaluateUserId,
+	}
+	db.Create(&Evaluation)
+
+	applog.Logger.Print("登録成功")
+	goto success
+
+success:
+	ctx.HTML(200, "submited.html", gin.H{}) //ファイル名は仮
+	return
+
+error:
+	ctx.HTML(200, "error.html", gin.H{}) //ファイル名は仮（このままでもよいか？）
+	return
+
+}
+*/
+/*
+func EvaluateDelete(ctx *gin.Context) {
+	/*
+	 * 作成中（勝手に作ってくれてもいいよ）
+	 * 投稿に対し、一度入れた評価を取り消す。
+	 * PEND事項：ゲストユーザーは取り消し不可にする？（ゲストユーザーの考え方整理で決定）
+	var db = models.GetDbConnection()
+	var Evaluation models.Evaluation
+
+	//対象の評価情報を取得（必要情報はView側から連携あり想定）
+	/* ユーザーIDの取得方法がPEND
+	 * ・View側から連携あり？
+	 * ・ゲストが取り消すことはなし想定でいいか？
+	var queryReviewId, isNotNull1 = ctx.GetQuery("reviewId")
+	var queryEvaluateUserId, isNotNull2 = ctx.GetQuery("evaluateuserid")
+
+	applog.Logger.Print("ReviewId:", queryReviewId)
+	applog.Logger.Print("EvaluateUserId:", queryEvaluateUserId)
+
+	//空データ確認ロジック
+	if !isNotNull1 || !queryReviewId == NULL {
+		applog.Logger.Print("評価取り消し対象のレビュー情報なし") //テスト用
+		goto error
+	}
+	if !isNotNull2 || !queryEvaluateUserId == NULL {
+		applog.Logger.Print("評価取り消し対象のユーザー情報なし") //テスト用
+		goto error
+	}
+
+	//DBから評価情報取得
+
+	//対象データをDBから削除
+
+	applog.Logger.Print("削除成功")
+	goto success
+
+success:
+	ctx.HTML(200, "submited.html", gin.H{}) //ファイル名は仮
+	return
+
+error:
+	ctx.HTML(200, "error.html", gin.H{}) //ファイル名は仮（このままでもよいか？）
+	return
+
+}
+*/
